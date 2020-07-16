@@ -18,12 +18,7 @@
       <li class="nav-item">
         <a class="nav-link" href="estudiantes.php">Lista de estudiantes</a>
       </li>
-     
-       
-    
     
   </div>
-
         </div>
-
 
