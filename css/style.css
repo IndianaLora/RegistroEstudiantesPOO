@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(216, 216, 238);
+}
+.registro{
+    background-color: rgb(247, 239, 239);
+}
+#container{
+
+margin: 0 auto;
+margin-top: 90px;
+width: 50%;
+padding: 50px;
+background-color: rgb(197, 186, 209)
+}
+
+.formulario{
+    
+    padding: 50px;
+    background-color: rgb(126, 124, 151);
+    border-radius: 3%;
+}
+#index{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.page-footer{
+
+    margin-top: 75px;
+}
+#t{
+width: 300px;
+
+}
+.h{
+
+border: 5px solid black;
+
+
+}
