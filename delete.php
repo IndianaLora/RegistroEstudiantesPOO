@@ -1,12 +1,15 @@
 <?php
-include 'codigo.php';
-session_start();
-$estudiantes = $_SESSION['estudiantes'];
-if(isset($_GET['id'])){
+require_once 'codigo.php';
+require_once 'estudiantesPOO.php';
+require_once 'estuServicesCookies.php';
+
+
+$service = new estuServicesCookies();
+$isContaintId= isset($_GET['id']);
+
+if($isContaintId){
     $estudiantesId=$_GET['id'];
-    $elementIndex=delete($estudiantes,'id',$estudiantesId);
-    unset($estudiantes[$elementIndex]);
-    $_SESSION['estudiantes']=$estudiantes;
+    $service->Delete($estudiantesId);
    }
 
 header("Location:Estudiantes.php");

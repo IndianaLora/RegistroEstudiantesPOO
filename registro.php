@@ -14,13 +14,13 @@
   <?php
 
   include('header.php');
-  include('codigo.php');
-  session_start();
+  require_once 'codigo.php';
+  $codigo= new codigo();
   //verbos HTTP
   //Si es usado 
   if($_SERVER['REQUEST_METHOD']==='POST')
   {
-    procesarRegistro();
+    $codigo->procesarRegistro();
   }
   ?>
 <div class="registro">
@@ -30,7 +30,7 @@
       <h1 class="text-center">Registro de estudiantes itla </h1>
       <div class="form-group">
         <!--Get Post redirect-->
-        <form action="registro.php" method="POST" name="estudiantes">
+        <form action="registro.php" enctype="multipart/form-data" method="POST" name="estudiantes">
           <!--POST se utiliza para los form siempre -->
           </br>
           <table align="center">
@@ -48,15 +48,20 @@
               <th><label for="">Carrera</label>
               <td><select name="carrera" id="carrera">
 
-                  <?php foreach ($carreras as $id => $text) : ?>
-
+                  <?php foreach ($codigo->carreras as $id => $text) : ?>
+                    
                     <option value="<?php echo $text ?>"><?php echo "{$text}" ?></option>
+
                   <?php endforeach; ?>
 
                 </select>
               </td>
             <tr>
               <th>
+              <tr>
+              <th><label for="photo">Foto de perfil</label>
+              <td><input type="file" name="profilePhoto" class="form-control" rows="3"></td>
+            <tr>
               </th>
           </table>
           <button type="submit" name="submit" class="btn btn-success float-right" onclick="estudiantes.php">Guardar</button>
